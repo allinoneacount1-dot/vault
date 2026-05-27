@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Send, Target, Terminal as TerminalIcon, Twitter } from "lucide-react";
 import { Terminal } from "./Terminal";
+import logoUrl from "@/assets/marcovault-logo.png";
 
 export function Hero() {
   return (
@@ -8,6 +9,18 @@ export function Hero() {
       {/* background grid + glow */}
       <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+
+      {/* ghost emblem watermark */}
+      <motion.img
+        src={logoUrl}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 0.05, scale: 1 }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+        className="pointer-events-none select-none absolute -top-20 left-1/2 -translate-x-1/2 w-[1100px] max-w-none animate-float-y"
+      />
+
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
