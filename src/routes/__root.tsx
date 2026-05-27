@@ -72,20 +72,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "MARCOVAULT | Multi-Chain Alpha & Web3 Intelligence" },
+      { name: "description", content: "MARCOVAULT is a futuristic Web3 personal branding platform focused on multi-chain intelligence, AI workflows, crypto trading systems, and community-driven alpha." },
+      { name: "author", content: "MARCOVAULT" },
+      { name: "theme-color", content: "#050505" },
+      { property: "og:title", content: "MARCOVAULT | Multi-Chain Alpha & Web3 Intelligence" },
+      { property: "og:description", content: "Navigate the noise. Enter the vault. Multi-chain alpha, AI workflows and sniper-grade execution." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "MARCOVAULT" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@vaultmarco" },
+      { name: "twitter:title", content: "MARCOVAULT | Multi-Chain Alpha & Web3 Intelligence" },
+      { name: "twitter:description", content: "Navigate the noise. Enter the vault." },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -93,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
