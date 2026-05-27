@@ -1,29 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/marco/Navbar";
+import { Hero } from "@/components/marco/Hero";
+import {
+  About, Ecosystem, Features, CommandCenter, Partnerships, SocialProof, Contact, Footer,
+} from "@/components/marco/Sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "MARCOVAULT | Multi-Chain Alpha & Web3 Intelligence" },
+      { name: "description", content: "MARCOVAULT is a futuristic Web3 personal branding platform focused on multi-chain intelligence, AI workflows, crypto trading systems, and community-driven alpha." },
+      { property: "og:title", content: "MARCOVAULT | Multi-Chain Alpha & Web3 Intelligence" },
+      { property: "og:description", content: "Navigate the noise. Enter the vault. Multi-chain alpha, AI workflows and sniper-grade execution." },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Marco",
+        url: "/",
+        sameAs: [
+          "https://x.com/vaultmarco",
+          "https://t.me/DxmZone",
+          "https://t.me/DexMultichain",
+        ],
+        jobTitle: "Multi-Chain Alpha Operator",
+        worksFor: { "@type": "Organization", name: "MARCOVAULT" },
+      }),
+    }],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative overflow-x-clip">
+      <Navbar />
+      <Hero />
+      <About />
+      <Ecosystem />
+      <Features />
+      <CommandCenter />
+      <Partnerships />
+      <SocialProof />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
